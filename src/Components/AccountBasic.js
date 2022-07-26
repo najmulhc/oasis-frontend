@@ -51,7 +51,7 @@ const AccountBasic = () => {
   };
   return (
     <div className="p-12">
-        <BackBtn /> 
+        <BackBtn to="/"/> 
       <Step step={1}  detail="Personal Info."/>
       <div className="text-left mr-16 ml-8">
        <TopHeading> Register Individual Account</TopHeading>

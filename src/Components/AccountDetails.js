@@ -28,7 +28,7 @@ const AccountDetails = () => {
   }
   return ( 
     <div className="p-12">
-    <BackBtn /> 
+    <BackBtn to="/basic"/> 
     <Step step={2} detail="Residency Info" />
     <div className='text-left mt-2'>
       <TopHeading>Complete Your Profile!</TopHeading>
