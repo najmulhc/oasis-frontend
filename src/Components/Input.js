@@ -250,7 +250,7 @@ const Input = ({ type , label, placeholder, state}) => {
     return (
       <label htmlFor="" className=''>
         <h3>{label}</h3>
-        <select className='input w-full p-2 border border-[#696F79] rounded-md focus:border-[#1565D8] focus:shadow-md mt-1 mb-2 outline-none' id="">
+        <select className='input w-full p-2 border border-[#696F79] rounded-md focus:border-[#1565D8] focus:shadow-md mt-1 mb-2 outline-none' onChange={e => state(e.target.value)} id="">
           <option value="" defaultValue="null"> Please Select</option>
           {countries.map(country => <option value={country.code}  key={country.code}>{country.name}</option>)}
          
