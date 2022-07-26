@@ -7,16 +7,18 @@ import {AiOutlineLock} from 'react-icons/ai'
 import TopHeading from './TopHeading'
 import { auth } from '../firebase.config'
 import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth'
+import { useNavigate } from 'react-router'
 const AccountDetails = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
   const [address, setAddress] = useState("");
   const [updateProfile, updating, error] = useUpdateProfile(auth);
   const [user] = useAuthState(auth)
+  const navigate = useNavigate()
   const update = async (event) => {
     event.preventDefault();
     await updateProfile({ country, phoneNumber, address });
-    console.log(user)
+ navigate("/bank")
   }
   if (error) {
     console.log(error)

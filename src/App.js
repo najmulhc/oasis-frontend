@@ -4,6 +4,7 @@ import {Routes, Route} from "react-router-dom"
 import AuthHome from "./Components/AuthHome";
 import AccountBasic from "./Components/AccountBasic";
 import AccountDetails from "./Components/AccountDetails";
+import BankAccount from "./Components/BankAccount";
 function App() {
   return (
     <main className="App min-h-screen min-w-screen  flex justify-center items-center bg-[#1565D8]  bg-opacity-40">
@@ -14,7 +15,8 @@ function App() {
             <Routes>
               <Route path="/" element={<AuthHome />} />
               <Route path="/basic" element={<AccountBasic />} />
-              <Route path="/details" element={<AccountDetails /> } />
+              <Route path="/details" element={<AccountDetails />} />
+              <Route path="/bank" element={<BankAccount /> } />   
             </Routes>
           </div>
       </section>
