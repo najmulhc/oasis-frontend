@@ -14,7 +14,7 @@ const BankAccount = () => {
         <Step step={3} detail="Bank varification" />
       </div>
 
-      <div className=" text-left w-auto  mt-24  px-4  ">
+      <div className=" text-left w-auto  mt-24  mx-6">
         {" "}
         <TopHeading>Complete your profile</TopHeading>
         <PlainText>
@@ -24,7 +24,7 @@ const BankAccount = () => {
         <div className="w-full mt-4">
           <Input
             type="number"
-            label="Bank Account Number"
+            label="Bank Varification Number (BVN)"
             placeholder="Provide your bank details"
           />
         </div>

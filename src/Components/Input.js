@@ -1,5 +1,5 @@
-import React from 'react'  
-const Input = ({ type , label, placeholder, state}) => {
+import React from "react";
+const Input = ({ type, label, placeholder, state }) => {
   const countries = [
     { name: "Afghanistan", code: "AF" },
     { name: "land Islands", code: "AX" },
@@ -244,27 +244,42 @@ const Input = ({ type , label, placeholder, state}) => {
     { name: "Western Sahara", code: "EH" },
     { name: "Yemen", code: "YE" },
     { name: "Zambia", code: "ZM" },
-    { name: "Zimbabwe", code: "ZW" }
+    { name: "Zimbabwe", code: "ZW" },
   ];
   if (type === "country") {
     return (
-      <label htmlFor="" className=''>
-        <h3>{label}</h3>
-        <select className='input w-full p-2 border border-[#696F79] rounded-md focus:border-[#1565D8] focus:shadow-md mt-1 mb-2 outline-none' onChange={e => state(e.target.value)} id="">
-          <option value="" defaultValue="null"> Please Select</option>
-          {countries.map(country => <option value={country.code}  key={country.code}>{country.name}</option>)}
-         
+      <label htmlFor="" className="">
+        <h3 className="font-bold text-[#696F79]">{label}</h3>
+        <select
+          className="input w-full p-2 border border-[#696F79] rounded-md focus:border-[#1565D8] focus:shadow-md mt-1 mb-2 outline-none"
+          onChange={(e) => state(e.target.value)}
+          id=""
+        >
+          <option value="" defaultValue="null">
+            {" "}
+            Please Select
+          </option>
+          {countries.map((country) => (
+            <option value={country.code} key={country.code}>
+              {country.name}
+            </option>
+          ))}
         </select>
-       
- </label>
-    )
+      </label>
+    );
   }
   return (
-      <label htmlFor="" className=''>
-          <h3>{ label}</h3>
-          <input className='input min-w-full p-2 border border-[#696F79] rounded-md focus:border-[#1565D8] focus:shadow-md mt-1 mb-2 outline-none' type={type} placeholder={placeholder} onChange={e=> state(e.target.value)} required/>
-     </label>
-  )
-}
+    <label htmlFor="" className="">
+      <h3 className="font-medium text-[#696F79]">{label}</h3>
+      <input
+        className="input min-w-full p-2 border border-[#696F79] rounded-md focus:border-[#1565D8] focus:shadow-md mt-1 mb-2 outline-none"
+        type={type}
+        placeholder={placeholder}
+        onChange={(e) => state(e.target.value)}
+        required
+      />
+    </label>
+  );
+};
 
-export default Input
+export default Input;

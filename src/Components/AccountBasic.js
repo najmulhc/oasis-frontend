@@ -53,7 +53,7 @@ const AccountBasic = () => {
     <div className="p-12">
         <BackBtn to="/"/> 
       <Step step={1}  detail="Personal Info."/>
-      <div className="text-left mr-16 ml-8">
+      <div className="text-left mx-6">
        <TopHeading> Register Individual Account</TopHeading>
         <PlainText>
           For the purpose of industry regulations, your details are required

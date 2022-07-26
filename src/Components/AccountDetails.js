@@ -30,7 +30,7 @@ const AccountDetails = () => {
     <div className="p-12">
     <BackBtn to="/basic"/> 
     <Step step={2} detail="Residency Info" />
-    <div className='text-left mt-2'>
+    <div className='text-left mt-2 mx-6'>
       <TopHeading>Complete Your Profile!</TopHeading>
         <PlainText>For the purpose of industry regulation, your details are required.</PlainText>
         <Input type="phone" label="Enter Phone Number" state={setPhoneNumber} /> 
