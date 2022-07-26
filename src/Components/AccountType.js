@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PlainText from './PlainText';
 const AccountType = ({lineImg, filledImg, type, message}) => {
     const [hover, setHover] = useState(true);
   return (
@@ -18,7 +19,7 @@ const AccountType = ({lineImg, filledImg, type, message}) => {
             <h3 className="text-xl  text-left font-semibold ">
       {type}
             </h3>
-              <p className="text-left text-[#8692A6] leading-4 mt-1">{message}</p>
+        <PlainText>{ message}</PlainText>
    </div>
   </Link>
   )
