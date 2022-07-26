@@ -11,6 +11,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router";
 import BackBtn from "./BackBtn";
 import Step from "./Step";
+import TopHeading from "./TopHeading";
 const AccountBasic = () => {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
@@ -53,9 +54,7 @@ const AccountBasic = () => {
         <BackBtn /> 
       <Step step={1}  detail="Personal Info."/>
       <div className="text-left mr-16 ml-8">
-        <h3 className="text-black text-2xl font-semibold ">
-          Register Individual Account
-        </h3>
+       <TopHeading> Register Individual Account</TopHeading>
         <PlainText>
           For the purpose of industry regulations, your details are required
         </PlainText>
