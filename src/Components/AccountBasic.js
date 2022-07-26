@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react"; 
 import PlainText from "./PlainText";
 import Input from "./Input";
 import { auth } from "../firebase.config";
@@ -16,19 +15,25 @@ const AccountBasic = () => {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [password, setPassword] = useState("");
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user,  error] =
     useCreateUserWithEmailAndPassword(auth);
-  const [updateProfile, updating, uerror] = useUpdateProfile(auth);
-  const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+  const [updateProfile] = useUpdateProfile(auth);
+  const [signInWithGoogle, guser,  gerror] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const register = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(email, password);
   };
+  const  update = async () => {
+    await updateProfile({ displayName: fullName });
+    await navigate("/details");
+  };
   useEffect(() => {
     if (user) {
       console.log(user.user);
-      update();
+      return (() => {
+        update();
+     })
     }
     if (guser) {
       console.log(guser);
@@ -37,12 +42,9 @@ const AccountBasic = () => {
     if (error || gerror) {
       console.log(error || gerror);
     }
-  }, [user, guser]);
-  const update = async () => {
-    await updateProfile({ displayName: fullName });
-    await navigate("/details");
-  };
-
+  }, [error, gerror, navigate, user, guser, update ]);
+  
+ 
   const googleSignIn = (e) => {
     signInWithGoogle();
   };
